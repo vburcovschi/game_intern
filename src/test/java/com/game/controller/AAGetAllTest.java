@@ -8,6 +8,8 @@ import com.game.controller.utils.PlayerInfoTest;
 import com.game.controller.utils.TestsHelper;
 import org.junit.Test;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.jdbc.Sql;
+import org.springframework.test.context.jdbc.SqlConfig;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.ResultActions;
 
@@ -17,7 +19,7 @@ import static org.springframework.test.util.AssertionErrors.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-public class GetAllTest extends AbstractTest {
+public class AAGetAllTest extends AbstractTest {
 
     private final TestsHelper testsHelper = new TestsHelper();
     private final ObjectMapper mapper = new ObjectMapper();
@@ -26,6 +28,7 @@ public class GetAllTest extends AbstractTest {
 
     //test1
     @Test
+    @Sql(scripts = "classpath:test.sql", config = @SqlConfig(encoding = "UTF-8"))
     public void getAllWithoutFiltersReturnAllPlayers() throws Exception {
         ResultActions resultActions = mockMvc.perform(get("/rest/players"))
                 .andExpect(status().isOk());

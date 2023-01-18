@@ -12,7 +12,7 @@ import static org.junit.Assert.assertSame;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-public class GetCountTest extends AbstractTest {
+public class AGetCountTest extends AbstractTest {
 
     private final TestsHelper testsHelper = new TestsHelper();
 

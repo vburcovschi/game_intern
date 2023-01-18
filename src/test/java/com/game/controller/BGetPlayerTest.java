@@ -11,7 +11,7 @@ import static org.springframework.test.util.AssertionErrors.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-public class GetPlayerTest extends AbstractTest {
+public class BGetPlayerTest extends AbstractTest {
 
     //test1
     @Test

@@ -2,6 +2,8 @@ package com.game.controller;
 
 import org.junit.Test;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.jdbc.Sql;
+import org.springframework.test.context.jdbc.SqlConfig;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -11,6 +13,7 @@ public class DeletePlayerTest extends AbstractTest {
 
     //test1
     @Test
+    @Sql(scripts = "classpath:test.sql", config = @SqlConfig(encoding = "UTF-8"))
     public void deletePlayerByIdZeroTest() throws Exception {
         mockMvc.perform(delete("/rest/players/0"))
                 .andExpect(status().isBadRequest());

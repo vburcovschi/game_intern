@@ -10,7 +10,7 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
-import javax.annotation.PreDestroy;
+//import javax.annotation.PreDestroy;
 
 
 import java.util.Date;
@@ -200,8 +200,8 @@ public class PlayerRepository{
             }
         }
 
-    @PreDestroy
+/*    @PreDestroy
     public void beforeStop() {
         sessionFactory.close();
-    }
+    }*/
 }

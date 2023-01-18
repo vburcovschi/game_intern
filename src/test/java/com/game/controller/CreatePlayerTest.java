@@ -6,13 +6,17 @@ import com.game.entity.Race;
 import com.game.controller.utils.PlayerInfoTest;
 import com.game.controller.utils.TestsHelper;
 import org.junit.Test;
+import org.springframework.core.annotation.Order;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.jdbc.Sql;
+import org.springframework.test.context.jdbc.SqlConfig;
 import org.springframework.test.web.servlet.ResultActions;
 
 import static org.springframework.test.util.AssertionErrors.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+@Order(1)
 public class CreatePlayerTest extends AbstractTest {
 
     //test1
@@ -62,6 +66,7 @@ public class CreatePlayerTest extends AbstractTest {
 
     //test6
     @Test
+    @Sql(scripts = "/test.sql", config = @SqlConfig(encoding = "UTF-8"))
     public void createPlayerTest() throws Exception {
         ResultActions resultActions = mockMvc.perform(post("/rest/players/")
                 .contentType(MediaType.APPLICATION_JSON)

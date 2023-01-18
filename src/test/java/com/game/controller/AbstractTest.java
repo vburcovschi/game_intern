@@ -20,7 +20,7 @@ import org.springframework.web.context.WebApplicationContext;
 @ActiveProfiles("dev")
 @ContextConfiguration(classes = {AppConfig.class, MyWebAppInit.class, WebConfig.class})
 @WebAppConfiguration
-@Sql(scripts = "classpath:test.sql", config = @SqlConfig(encoding = "UTF-8"))
+@Sql(scripts = "/test.sql", config = @SqlConfig(encoding = "UTF-8"))
 public abstract class AbstractTest {
 
     WebApplicationContext context;

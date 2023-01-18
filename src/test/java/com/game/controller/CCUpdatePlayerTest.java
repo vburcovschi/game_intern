@@ -15,7 +15,7 @@ import static org.springframework.test.util.AssertionErrors.assertNotEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-public class UpdatePlayerTest extends AbstractTest {
+public class CCUpdatePlayerTest extends AbstractTest {
 
     private final TestsHelper testsHelper = new TestsHelper();
     private final ObjectMapper mapper = new ObjectMapper();
